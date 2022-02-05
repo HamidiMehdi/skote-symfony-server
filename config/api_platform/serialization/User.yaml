@@ -1,0 +1,18 @@
+App\Entity\User:
+  attributes:
+    id:
+      groups: [ 'user:read' ]
+    firstname:
+      groups: [ 'user:read' ]
+    lastname:
+      groups: [ 'user:read' ]
+    email:
+      groups: [ 'user:read' ]
+    userFrom:
+      groups: [ 'user:read' ]
+    createdAt:
+      groups: [ 'user:read' ]
+    updatedAt:
+      groups: [ 'user:read' ]
+    roles:
+      groups: [ 'user:read' ]
