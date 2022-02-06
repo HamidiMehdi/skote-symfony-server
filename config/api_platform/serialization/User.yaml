@@ -3,13 +3,15 @@ App\Entity\User:
     id:
       groups: [ 'user:read' ]
     firstname:
-      groups: [ 'user:read' ]
+      groups: [ 'user:read', 'user:write' ]
     lastname:
-      groups: [ 'user:read' ]
+      groups: [ 'user:read', 'user:write' ]
     email:
-      groups: [ 'user:read' ]
+      groups: [ 'user:read', 'user:write' ]
+    password:
+      groups: [ 'user:write' ]
     userFrom:
-      groups: [ 'user:read' ]
+      groups: [ 'user:read', 'user:write' ]
     createdAt:
       groups: [ 'user:read' ]
     updatedAt:

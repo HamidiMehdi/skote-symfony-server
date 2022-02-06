@@ -1,4 +1,7 @@
 api_platform:
+    title: 'Stoke Drive API'
+    description: 'Fournisseur de données Stoke Drive.'
+    version: '1.0'
     show_webby: false
     mapping:
         paths: ['%kernel.project_dir%/src/Entity', '%kernel.project_dir%/config/api_platform/resources']
