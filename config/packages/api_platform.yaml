@@ -4,7 +4,7 @@ api_platform:
     version: '1.0'
     show_webby: false
     mapping:
-        paths: ['%kernel.project_dir%/src/Entity', '%kernel.project_dir%/config/api_platform/resources']
+        paths: ['%kernel.project_dir%/config/api_platform/resources']
     formats:
         json: ['application/json']
         jsonld: ['application/ld+json']
@@ -12,6 +12,10 @@ api_platform:
         multipart: ['multipart/form-data']
     patch_formats:
         json: ['application/merge-patch+json']
+    openapi:
+        license:
+            name: 'By Mehdi HAMIDI'
+            url: 'https://github.com/HamidiMehdi'
     swagger:
         versions: [3]
         api_keys:

@@ -31,3 +31,7 @@ services:
     App\Service\OpenApi\Resources\OpenApiTokenResource:
         public: true
         tags: ['open.api.resources']
+
+    App\Service\OpenApi\Resources\OpenApiUserResource:
+        public: true
+        tags: [ 'open.api.resources' ]

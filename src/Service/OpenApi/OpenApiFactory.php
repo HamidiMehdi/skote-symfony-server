@@ -8,6 +8,10 @@ use ApiPlatform\Core\OpenApi\OpenApi;
 
 class OpenApiFactory implements OpenApiFactoryInterface
 {
+    /**
+     * @param iterable $resources
+     * @param OpenApiFactoryInterface $decorated
+     */
     public function __construct(
         private iterable                $resources,
         private OpenApiFactoryInterface $decorated,
@@ -22,7 +26,6 @@ class OpenApiFactory implements OpenApiFactoryInterface
     public function __invoke(array $context = []): OpenApi
     {
         $openApi = $this->decorated->__invoke($context);
-
         /** @var OpenApiResourcesInterface $resource */
         foreach ($this->resources as $resource) {
             $openApi = $resource->createPaths($openApi);
