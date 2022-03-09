@@ -1,0 +1,14 @@
+App\Entity\Friendship:
+  attributes:
+    id:
+      groups: [ 'friendship:read' ]
+    user:
+      groups: [ 'friendship:read', 'friendship:write' ]
+    friend:
+      groups: [ 'friendship:read', 'friendship:write' ]
+    accepted:
+      groups: [ 'friendship:read', 'friendship:write' ]
+    createdAt:
+      groups: [ 'friendship:read' ]
+    updatedAt:
+      groups: [ 'friendship:read' ]

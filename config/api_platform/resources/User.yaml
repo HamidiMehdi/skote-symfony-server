@@ -6,13 +6,9 @@ resources:
       denormalization_context:
         groups: [ 'user:write' ]
     collectionOperations:
-      get: ~
       post:
     itemOperations:
       get: ~
-      put: ~
-      patch: ~
-      delete: ~
       me:
         method: GET
         path: /me

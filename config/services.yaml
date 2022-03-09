@@ -35,3 +35,20 @@ services:
     App\Service\OpenApi\Resources\OpenApiUserResource:
         public: true
         tags: [ 'open.api.resources' ]
+
+    # Filter
+    friendship.search_filter:
+        parent: 'api_platform.doctrine.orm.search_filter'
+        arguments: [ { user: 'exact', friend: 'exact', accepted: 'exact' } ]
+        tags:  [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+
+    friendship.exists_filter:
+        parent: 'api_platform.doctrine.orm.exists_filter'
+        arguments: [ { accepted: ~ } ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false

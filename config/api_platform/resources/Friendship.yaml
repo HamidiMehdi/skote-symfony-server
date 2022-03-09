@@ -1,0 +1,14 @@
+resources:
+  App\Entity\Friendship:
+    attributes:
+      normalization_context:
+        groups: [ 'friendship:read' ]
+      denormalization_context:
+        groups: [ 'friendship:write' ]
+    collectionOperations:
+      get:
+        filters: [ 'friendship.search_filter', 'friendship.exists_filter' ]
+    itemOperations:
+      get:
+        filters: [ 'friendship.search_filter' ]
+      patch: ~
