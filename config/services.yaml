@@ -23,6 +23,7 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
+    # OpenApi
     App\Service\OpenApi\OpenApiFactory:
         decorates: 'api_platform.openapi.factory'
         arguments: [ !tagged {tag: 'open.api.resources'} ]
@@ -45,9 +46,32 @@ services:
         autoconfigure: false
         public: false
 
+    apip.filter.or_search_filter:
+        class: 'App\Service\Filters\OrSearchFilter'
+        parent: 'api_platform.doctrine.orm.search_filter'
+        autowire: false
+        autoconfigure: false
+        public: false
+
+    friendship.or_search_filter:
+        parent: 'apip.filter.or_search_filter'
+        arguments: [ { user.firstname: 'partial', user.lastname: 'partial'} ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+
     friendship.exists_filter:
         parent: 'api_platform.doctrine.orm.exists_filter'
         arguments: [ { accepted: ~ } ]
+        tags: [ 'api_platform.filter' ]
+        autowire: false
+        autoconfigure: false
+        public: false
+
+    friendship.order_filter:
+        parent: 'api_platform.doctrine.orm.order_filter'
+        arguments: [ { createdAt: 'DESC' } ]
         tags: [ 'api_platform.filter' ]
         autowire: false
         autoconfigure: false

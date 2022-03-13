@@ -5,9 +5,11 @@ resources:
         groups: [ 'friendship:read' ]
       denormalization_context:
         groups: [ 'friendship:write' ]
+      pagination_items_per_page: 15
+      pagination_client_items_per_page: true
     collectionOperations:
       get:
-        filters: [ 'friendship.search_filter', 'friendship.exists_filter' ]
+        filters: [ 'friendship.search_filter', 'friendship.exists_filter', 'friendship.order_filter', 'friendship.or_search_filter' ]
     itemOperations:
       get:
         filters: [ 'friendship.search_filter' ]
